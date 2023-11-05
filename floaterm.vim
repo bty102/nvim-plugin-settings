@@ -20,3 +20,6 @@ hi FloatermBorder guibg=#222222 guifg=#EEEEEE
 
 "Command used for opening a file in the outside nvim from within :terminal
 let g:floaterm_opener = 'edit'
+
+"remove line number in split terminal
+autocmd TermOpen * setlocal nonumber
