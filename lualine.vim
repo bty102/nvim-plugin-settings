@@ -21,15 +21,22 @@ require('lualine').setup {
                 'filename',
                 path = 2,
                 symbols = {
-                    modified = '',      -- Text to show when the file is modified.
-                    readonly = '',      -- Text to show when the file is non-modifiable or readonly.
-                    unnamed = '**no name**', -- Text to show for unnamed buffers.
-                    newfile = '**new file**',     -- Text to show for newly created file before first write
+                    modified = '',      -- Text to show when the file is modified.
+                    readonly = '',      -- Text to show when the file is non-modifiable or readonly.
+                    unnamed = '~none~', -- Text to show for unnamed buffers.
+                    newfile = '~new~',     -- Text to show for newly created file before first write
                 },
             },
             'b:coc_current_function'
         },
-        lualine_x = {},
+        lualine_x = {
+            { 
+                'vim.fn["codeium#GetStatusString"]()',
+                fmt = function(str) 
+                    return "🤖 " .. str:lower():match("^%s*(.-)%s*$")
+                end 
+            },
+        },
         lualine_y = {},
         lualine_z = {}
     },
