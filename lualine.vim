@@ -30,6 +30,7 @@ require('lualine').setup {
             'b:coc_current_function'
         },
         lualine_x = {
+            'g:coc_status',
             { 
                 'vim.fn["codeium#GetStatusString"]()',
                 fmt = function(str) 
