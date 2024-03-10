@@ -7,10 +7,10 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 -- empty setup using defaults
-require("nvim-tree").setup()
+-- require("nvim-tree").setup()
 
 -- OR setup with some options
---require("nvim-tree").setup({
+require("nvim-tree").setup({
 --  sort = {
 --    sorter = "case_sensitive",
 --  },
@@ -23,7 +23,19 @@ require("nvim-tree").setup()
 --  filters = {
 --    dotfiles = true,
 --  },
---})
+    renderer = {
+        indent_markers = {
+            enable = true,
+        },
+    },
+    diagnostics = {
+        enable = true,
+        -- icons = {
+        --    warning = "🟨",
+        --    error = "🟥",
+        -- },
+    },
+})
 END
 "maps
 nnoremap <F5> :NvimTreeToggle<CR>

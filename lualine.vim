@@ -4,8 +4,8 @@ require('lualine').setup {
         component_separators = { left = '│', right = '│'},
         section_separators = { left = '', right = ''},
         disabled_filetypes = {     -- Filetypes to disable lualine for.
-        statusline = {"coctree", "floaterm"},       -- only ignores the ft for statusline.
-        winbar = {"NvimTree", "coctree", "floaterm"},           -- only ignores the ft for winbar.
+            statusline = {"coctree"},       -- only ignores the ft for statusline.
+            winbar = {"NvimTree", "coctree"},           -- only ignores the ft for winbar.
         },
     },
     extensions = {
@@ -34,8 +34,9 @@ require('lualine').setup {
             { 
                 'vim.fn["codeium#GetStatusString"]()',
                 fmt = function(str) 
-                    return "🤖 " .. str:lower():match("^%s*(.-)%s*$")
-                end 
+                    return "󰘦 " .. str:lower():match("^%s*(.-)%s*$")
+                end,
+                color = {fg = "#58f5ab"}
             },
         },
         lualine_y = {},
