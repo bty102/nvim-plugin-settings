@@ -1,3 +1,5 @@
 lua << END
-require("ibl").setup()
+require("ibl").setup({
+    indent = { char = "┆" },
+})
 END

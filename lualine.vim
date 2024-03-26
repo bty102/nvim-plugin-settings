@@ -1,8 +1,8 @@
 lua << END
 require('lualine').setup {
     options = {        
-        component_separators = { left = '│', right = '│'},
-        section_separators = { left = '', right = ''},
+        -- component_separators = { left = '│', right = '│'},
+        -- section_separators = { left = '', right = ''},
         disabled_filetypes = {     -- Filetypes to disable lualine for.
             statusline = {"coctree"},       -- only ignores the ft for statusline.
             winbar = {"NvimTree", "coctree"},           -- only ignores the ft for winbar.
